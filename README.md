@@ -1,24 +1,25 @@
-# hello-world-npm
+# Neurocast Engine
 
-This is a simple npm package that demonstrates the [GitHub Package Registry](https://github.com/features/package-registry).
+Streaming time-series forecasting for constrained edge deployments.
 
-## Installation
+**Status: Released — v1.2.0 (2025-09-30).** The implementation in this repository is
+the one described in the showcase write-up; it is maintained and published here.
 
-Before installing, make sure to authenticate with GitHub Package Registry or using a `.npmrc` file. See "[Configuring npm for use with GitHub Package Registry](https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry#authenticating-to-github-package-registry)."
+## Contents
 
-`$ npm install @codertocat/hello-world-npm`
+- `src/neurocast/model.py` — quantised encoder/decoder and forecast head
+- `src/neurocast/streaming.py` — sliding-window ingestion and online calibration
+- `src/neurocast/calibration.py` — uncertainty calibration utilities
+- `tests/test_model.py` — deterministic unit tests for the forecasting core
+- `examples/run_retail_demo.py` — small end-to-end example
 
-Or add this package to your `package.json` file:
-
-```
-"dependencies": {
-    "@codertocat/hello-world-npm": "1.0.0"
-  }
-```
-
-## Usage
+## Install / run
 
 ```
-const myPackage = require('@codertocat/hello-world-npm');
-myPackage.helloWorld();
+pip install -e .
+python examples/run_retail_demo.py
 ```
+
+## Licence
+
+Apache-2.0.
